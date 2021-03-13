@@ -1,0 +1,160 @@
+/* Global styles
+-------------------------------------------------- */
+/* smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* lighter body text and light background */
+body {
+  color: #5a5a5a;
+  background: #F3F6F9;
+}
+
+.floating {
+  z-index: 1020 !important;
+}
+
+/* background color for navbar and footer */
+.bg-dark {
+	background-color: #151515 !important;
+}
+
+/* card border radius*/
+.rounded-card {
+  border-radius: 1rem;
+}
+
+.rounded-card-img-bottom {
+  border-radius: 0 0 1rem 1rem;
+}
+
+/* letter space */
+.letter-space {
+  letter-spacing: -0.05em;
+}
+
+/* justified text */
+.text-justify {
+  text-align: justify !important;
+}
+
+/* custom font size */
+.fs-2rem {
+	font-size: calc(2rem + 1vw);
+}
+
+.fs-1rem {
+	font-size: calc(1rem + 1vw);
+}
+
+/* Navbar
+-------------------------------------------------- */
+
+/* Set navbar background colour */
+nav.bg-dark {
+	background-color: #15151530 !important;
+}
+
+nav.bg-dark.showNavbar {
+  background: #151515 !important;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.30);
+}
+/* Set navbar button animation */
+.navbar-toggler-icon {
+  transform: rotate(0deg);
+  transition: all 0.2s;
+}
+
+.navbar-toggler-icon.rotate {
+  transform: rotate(-90deg);
+}
+
+/* remove border of navbar button */
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Intro
+-------------------------------------------------- */
+
+/* set background image to cover the whole screen */
+#intro {
+  background: #15151547 url(images/ruslan-bardash-WMSvsWzhM0g-unsplash.webp) no-repeat center bottom;
+  background-size: cover;
+  background-attachment: fixed;
+	background-blend-mode:overlay;
+	height:100vh;
+}
+
+/* learn-more button default color and transition duration */
+#intro-button {
+  color: #FFFFFF;
+  transition: all 0.2s;
+}
+
+/* Back-to-top button
+------------------------- */
+
+/* Hide button by default */
+#back-to-top-button {
+  display: none;
+}
+
+/* Show button after scrolled */
+#back-to-top-button.pageScrolled {
+  display: block;
+}
+
+/* Contents
+------------------------- */
+
+/* Contact
+------------------------- */
+
+/* Footer
+------------------------- */
+
+/* Reponsive CSS
+-------------------------------------------------- */
+
+/* extra small devices (portrait phones, less than 576px) */
+/* no media query since this is the default in Bootstrap */
+
+/* small devices (landscape phones, 576px and up) */
+@media all and (min-width: 576px) {
+}
+
+/* medium devices (tablets, 768px and up) */
+@media all and (min-width: 768px) {
+}
+
+/* large devices (desktops, 992px and up) */
+@media all and (min-width: 992px){
+}
+/* extra large devices (large desktops, 1200px and up) */
+@media all and (min-width: 1200px) {
+}
+
+/* button hover behavior */
+@media only screen and (hover: hover) and (pointer: fine) {
+  /* learn-more button hover behavior */
+  #intro-button:hover{
+    color:#000000;
+    background-color:#FFFFFF;
+  }
+  /* back-to-top button */
+  #back-to-top-button:hover {
+	color: #2162a8;
+  }
+}
+
+/* iOS only */
+@supports (-webkit-touch-callout: none) {
+  #intro {
+    background-attachment: scroll;
+  }
+}
