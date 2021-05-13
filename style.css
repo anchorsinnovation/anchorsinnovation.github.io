@@ -48,18 +48,36 @@ body {
 	font-size: calc(1rem + 1vw);
 }
 
+/* Loading Screen
+-------------------------------------------------- */
+
+#loader{
+  height: 100vh;
+  width: 100%;
+  z-index: 1090;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
 /* Navbar
 -------------------------------------------------- */
 
 /* Set navbar background colour */
 nav.bg-dark {
-	background-color: #15151530 !important;
+	background: #151515 !important;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.30);
 }
 
 nav.bg-dark.showNavbar {
   background: #151515 !important;
   box-shadow: 0 .5rem 1rem rgba(0,0,0,.30);
 }
+
+nav.bg-dark.hideNavbar {
+	background-color: #15151530 !important;
+  box-shadow: none;
+}
+
 /* Set navbar button animation */
 .navbar-toggler-icon {
   transform: rotate(0deg);
@@ -98,16 +116,6 @@ nav.bg-dark.showNavbar {
 
 /* Back-to-top button
 ------------------------- */
-
-/* Hide button by default */
-#back-to-top-button {
-  display: none;
-}
-
-/* Show button after scrolled */
-#back-to-top-button.pageScrolled {
-  display: block;
-}
 
 /* Contents
 ------------------------- */
