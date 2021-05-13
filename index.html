@@ -1,21 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <title>ANCHORS Innovation</title>
   <!-- Required meta tags -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no" />
   <!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta2/css/bootstrap.min.css" integrity="sha512-aqT9YD5gLuLBr6ipQAS+72o5yHKzgZbGxEh6iY8lW/r6gG14e2kBTAJb8XrxzZrMOgSmDqtLaF76T0Z6YY2IHg==" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta3/css/bootstrap.min.css" integrity="sha512-N415hCJJdJx+1UBfULt+i+ihvOn42V/kOjOpp1UTh4CZ70Hx5bDlKryWaqEKfY/8EYOu/C2MuyaluJryK1Lb5Q==" crossorigin="anonymous" />
   <!-- Preload Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous" />
   <!-- Custom CSS -->
   <link href="style.css" rel="stylesheet" />
   <!-- Preload background image of the site - Photo by Ruslan Bardash -->
   <link rel="preload" href="images/ruslan-bardash-WMSvsWzhM0g-unsplash.webp" as="image" />
 </head>
 
-<body>
+<body onload="loadFunction()">
+	<!-- Loader-->
+	<div class="d-none position-fixed align-items-center justify-content-center bg-white" id="loader">
+		<div class="spinner-border" role="status">
+			<span class="visually-hidden">Loading...</span>
+		</div>
+	</div>
+
 	<!-- Navbar -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark position-fixed top-0 ps-3 pe-1 container-fluid floating" id="navbar">
 		<a class="navbar-brand" href="#" onclick="closeFunction()">ANCHORS INNOVATION</a>
@@ -40,9 +47,6 @@
 		</div>
 	</nav>
 
-	<!-- Back-To-Top Button	-->
-	<i onclick="topFunction()" class="fas fa-chevron-up fs-4 position-fixed floating m-1 p-3 p-xl-2 bottom-0 end-0 bg-white rounded-circle border-0 shadow" aria-hidden="true" id="back-to-top-button"></i>
-
 	<!-- Intro -->
 	<header class="d-flex align-items-center" id="intro">
 		<div class="mx-auto text-center text-white">
@@ -52,7 +56,6 @@
 		</div>
 	</header>
 
-	<!-- Contents -->
 	<!-- About us -->
 	<section class="container py-5 my-5" id="about">
 		<div class="row">
@@ -68,10 +71,15 @@
 				</p>
 			</div>
 			<div class="col-md-5 d-block m-auto">
-				<img class="img-fluid" src="images/pexels-skitterphoto-38070.jpg" alt="Generic placeholder image"></img>
+				<img class="img-fluid" src="images/aboutanchors.png" alt="About Anchors"></img>
 			</div>
 		</div>
 	</section>
+
+	<!-- Back-To-Top Button	-->
+	<a role="button" class="position-fixed floating lh-1 m-1 p-3 p-xl-2 bottom-0 end-0 bg-white rounded-circle border-0 shadow text-decoration-none text-body hover-overlay" href="#" onclick="topFunction()" aria-hidden="true" id="back-to-top-button">
+		<i class="fas fa-chevron-up fs-4"></i>
+	</a>
 
 	<!-- Our solutions -->
 	<section class="container py-5 my-5" id="solutions">
@@ -81,7 +89,7 @@
 				<p class="fs-5 fw-light lh-lg"><br />Our solutions have four major parts.</p>
 			</div>
 			<div class="col-md-6 col-md-push-6 my-2">
-				<div class="card rounded-card shadow">
+				<div class="card rounded-card border-0">
 					<div class="card-body">
 						<h4 class="card-title fw-light letter-space">
 							Dashboard
@@ -91,7 +99,7 @@
 				</div>
 			</div>
 			<div class="col-md-6 col-md-pull-6 my-2">
-				<div class="card rounded-card shadow">
+				<div class="card rounded-card border-0">
 					<div class="card-body">
 						<h4 class="card-title fw-light letter-space">
 							Scan to BIM
@@ -101,7 +109,7 @@
 				</div>
 			</div>
 			<div class="col-md-6 col-md-push-6 my-2">
-				<div class="card rounded-card shadow">
+				<div class="card rounded-card border-0">
 					<div class="card-body">
 						<h4 class="card-title fw-light letter-space">
 							Modeling and Analytics
@@ -111,7 +119,7 @@
 				</div>
 			</div>
 			<div class="col-md-6 col-md-pull-6 my-2">
-				<div class="card rounded-card shadow">
+				<div class="card rounded-card border-0">
 					<div class="card-body">
 						<h4 class="card-title fw-light letter-space">
 							AR/VR for Evacuation
@@ -138,7 +146,7 @@
 		</div>
 	</section>
 
-  <!-- Contact -->
+	<!-- Contact -->
 	<section class="container py-5 my-5" id="contact">
 		<div class="row">
 			<div class="col-md-12">
@@ -162,7 +170,7 @@
 	</footer>
 
 	<!-- Bootstrap JavaScript -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta2/js/bootstrap.min.js" integrity="sha512-7PEMaoHJNQoEqpxgkKskoXpEglioEnKlfCMcYVmml8yJjmBG7twaBmnI+PLU0cNTw2VWhizJYUG1kmSzRDo1tw==" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta3/js/bootstrap.min.js" integrity="sha512-mp3VeMpuFKbgxm/XMUU4QQUcJX4AZfV5esgX72JQr7H7zWusV6lLP1S78wZnX2z9dwvywil1VHkHZAqfGOW7Nw==" crossorigin="anonymous"></script>
 	<!-- Custom JavaScript -->
 	<script src="script.js" type="text/javascript"></script>
 </body>
